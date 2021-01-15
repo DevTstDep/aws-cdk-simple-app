@@ -1,0 +1,66 @@
+{
+  "version": "tree-0.1",
+  "tree": {
+    "id": "App",
+    "path": "",
+    "children": {
+      "Tree": {
+        "id": "Tree",
+        "path": "Tree"
+      },
+      "AwsCdkSimpleAppStack": {
+        "id": "AwsCdkSimpleAppStack",
+        "path": "AwsCdkSimpleAppStack",
+        "children": {
+          "my-simple-app-bucket": {
+            "id": "my-simple-app-bucket",
+            "path": "AwsCdkSimpleAppStack/my-simple-app-bucket",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "AwsCdkSimpleAppStack/my-simple-app-bucket/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::S3::Bucket",
+                  "aws:cdk:cloudformation:props": {
+                    "bucketEncryption": {
+                      "serverSideEncryptionConfiguration": [
+                        {
+                          "serverSideEncryptionByDefault": {
+                            "sseAlgorithm": "AES256"
+                          }
+                        }
+                      ]
+                    },
+                    "bucketName": "my-simple-app-bucket"
+                  }
+                }
+              },
+              "Notifications": {
+                "id": "Notifications",
+                "path": "AwsCdkSimpleAppStack/my-simple-app-bucket/Notifications"
+              }
+            }
+          },
+          "my-simple-app-bucket-export": {
+            "id": "my-simple-app-bucket-export",
+            "path": "AwsCdkSimpleAppStack/my-simple-app-bucket-export"
+          },
+          "CDKMetadata": {
+            "id": "CDKMetadata",
+            "path": "AwsCdkSimpleAppStack/CDKMetadata",
+            "children": {
+              "Default": {
+                "id": "Default",
+                "path": "AwsCdkSimpleAppStack/CDKMetadata/Default"
+              },
+              "Condition": {
+                "id": "Condition",
+                "path": "AwsCdkSimpleAppStack/CDKMetadata/Condition"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
